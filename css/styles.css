@@ -206,8 +206,10 @@ nav a:hover {
 
 .about p {
     line-height: 1.6;
-    font-size: 1.05rem;
     margin-top: 15px;
+    max-width: 650px;
+    margin: 0 auto 18px auto;
+    font-size: 1.03rem;
 }
 
 
@@ -433,11 +435,11 @@ pre {
 }
 
 .profile-photo {
-    width: 220px;       /* reduced from 260 */
+    width: 200px;
     height: auto;
     border-radius: 10px;
     display: block;
-    margin: 10px auto 25px auto;  /* cleaner spacing */
+    margin: 10px auto 25px auto;
     box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
     border: none;
 }
