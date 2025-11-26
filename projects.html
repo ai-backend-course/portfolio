@@ -188,7 +188,7 @@ if (sumRun) {
         }
         sumOut.textContent = "Sending summary request...";
         try {
-            const data = await postJson("https://ai-summary-service.fly.dev/summarize", { text });
+            const data = await postJson("https://ai-summary-service.fly.dev/summary", { text });
             sumOut.textContent = JSON.stringify(data, null, 2);
         } catch (err) {
             sumOut.textContent = err.message;
