@@ -1,34 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Projects | Jeff Ellis</title>
     <link rel="stylesheet" href="css/styles.css" />
-</head>
-<body>
-
+  </head>
+  <body>
     <nav>
-    <div class="logo">JE</div>
+      <div class="logo">JE</div>
 
-    <a href="index.html">Home</a>
-    <a href="projects.html">Projects</a>
-    <a href="about.html">About</a>
-    <a href="contact.html">Contact</a>
-    <a href="playground.html">Playground</a>
-</nav>
+      <a href="index.html">Home</a>
+      <a href="projects.html">Projects</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="playground.html">Playground</a>
+    </nav>
 
     <main>
-    <section class="projects-list">
+      <section class="projects-list">
+        <h1>My AI Backend Projects</h1>
 
-    <h1>My AI Backend Projects</h1>
-
-    <div class="project-card">
-        <h2>Notes Memory Core API</h2>
-        <p>A production-grade Go API with CRUD note management, structured logging (zerolog), metrics middleware, and Postgres integration.</p>
-        <a href="https://github.com/ai-backend-course/notes-memory-core" target="_blank">View Repo</a>
-        <a class="demo-btn" href="https://notes-memory-core-api.fly.dev/health" target="_blank">Test Live API</a>
-        <pre>
+        <div class="project-card">
+          <h2>Notes Memory Core API</h2>
+          <p>
+            A production-grade Go API with CRUD note management, structured
+            logging (zerolog), metrics middleware, and Postgres integration.
+          </p>
+          <a
+            href="https://github.com/ai-backend-course/notes-memory-core"
+            target="_blank"
+            >View Repo</a
+          >
+          <a
+            class="demo-btn"
+            href="https://notes-memory-core-api.fly.dev/health"
+            target="_blank"
+            >Test Live API</a
+          >
+          <pre>
             POST /notes
             {
             "title": "Test",
@@ -44,24 +54,41 @@
                 "created_at": "..."
             }
             ]
-    </pre>
-
-
-    </div>
-
-    <div class="project-card">
-        <h2>Notes Memory Core – RAG Extension</h2>
-        <p>A full Retrieval-Augmented Generation (RAG) system built with Go, pgvector, and OpenAI—featuring semantic search and a Query pipeline that retrieves relevant notes and generates grounded AI responses using GPT-4o-Mini and SmallEmbedding-3.</p>
-        <a href="https://github.com/ai-backend-course/notes-memory-core-rag" target="_blank">View Repo</a>
-        <a class="demo-btn" href="https://notes-memory-core-rag.fly.dev/health" target="_blank">Test Live RAG API</a>
-        <div class="inline-test">
-        <h3>Try the RAG Query</h3>
-            <input id="rag-inline-input" type="text" placeholder="Ask a question based on your notes..." />
-            <button id="rag-inline-run">Run RAG Query</button>
-            <pre id="rag-inline-output">Response will appear here.</pre>
+    </pre
+          >
         </div>
 
-        <pre>
+        <div class="project-card">
+          <h2>Notes Memory Core – RAG Extension</h2>
+          <p>
+            A full Retrieval-Augmented Generation (RAG) system built with Go,
+            pgvector, and OpenAI—featuring semantic search and a Query pipeline
+            that retrieves relevant notes and generates grounded AI responses
+            using GPT-4o-Mini and SmallEmbedding-3.
+          </p>
+          <a
+            href="https://github.com/ai-backend-course/notes-memory-core-rag"
+            target="_blank"
+            >View Repo</a
+          >
+          <a
+            class="demo-btn"
+            href="https://notes-memory-core-rag.fly.dev/health"
+            target="_blank"
+            >Test Live RAG API</a
+          >
+          <div class="inline-test">
+            <h3>Try the RAG Query</h3>
+            <input
+              id="rag-inline-input"
+              type="text"
+              placeholder="Ask a question based on your notes..."
+            />
+            <button id="rag-inline-run">Run RAG Query</button>
+            <pre id="rag-inline-output">Response will appear here.</pre>
+          </div>
+
+          <pre>
         POST /query
         {
         "query": "What does my note say?"
@@ -73,23 +100,41 @@
         "response": "... grounded AI answer ...",
         "results": [...]
         }
-        </pre>
-
-
-    </div>
-
-    <div class="project-card">
-        <h2>AI Embedding Microservice</h2>
-        <p>An independent, scalable microservice that converts text into embedding vectors using either deterministic mock mode or OpenAI embeddings, with full validation, logging, and metrics.</p>
-        <a href="https://github.com/ai-backend-course/ai-embedding-microservice" target="_blank">View Repo</a>
-        <a class="demo-btn" href="https://ai-embedding-microservice.fly.dev/health" target="_blank">Test Embedding Service</a>
-        <div class="inline-test">
-            <h3>Try the Embedding Service</h3>
-            <input id="embed-inline-input" type="text" placeholder="Enter text to embed..." />
-            <button id="embed-inline-run">Generate Embedding</button>
-            <pre id="embed-inline-output">Embedding vector will appear here.</pre>
+        </pre
+          >
         </div>
-        <pre>
+
+        <div class="project-card">
+          <h2>AI Embedding Microservice</h2>
+          <p>
+            An independent, scalable microservice that converts text into
+            embedding vectors using either deterministic mock mode or OpenAI
+            embeddings, with full validation, logging, and metrics.
+          </p>
+          <a
+            href="https://github.com/ai-backend-course/ai-embedding-microservice"
+            target="_blank"
+            >View Repo</a
+          >
+          <a
+            class="demo-btn"
+            href="https://ai-embedding-microservice.fly.dev/health"
+            target="_blank"
+            >Test Embedding Service</a
+          >
+          <div class="inline-test">
+            <h3>Try the Embedding Service</h3>
+            <input
+              id="embed-inline-input"
+              type="text"
+              placeholder="Enter text to embed..."
+            />
+            <button id="embed-inline-run">Generate Embedding</button>
+            <pre id="embed-inline-output">
+Embedding vector will appear here.</pre
+            >
+          </div>
+          <pre>
         POST /embed
         {
         "text": "hello"
@@ -99,24 +144,40 @@
         {
         "embedding": [0.123, -0.482, ...]
         }
-        </pre>
-
-
-    </div>
-
-    <div class="project-card">
-        <h2>AI Summary Microservice</h2>
-        <p>A standalone microservice that summarizes text using either a mock response or OpenAI’s GPT-4o-Mini, designed for reusability, scalability, and clean microservice architecture.</p>
-        <a href="https://github.com/ai-backend-course/ai-summary-service" target="_blank">View Repo</a>
-        <a class="demo-btn" href="https://ai-summary-service.fly.dev/health" target="_blank">Test Summary Service</a>
-        <div class="inline-test">
-        <h3>Try the Summary Service</h3>
-        <textarea id="summary-inline-input" rows="3" placeholder="Paste text to summarize..."></textarea>
-        <button id="summary-inline-run">Summarize</button>
-        <pre id="summary-inline-output">Summary will appear here.</pre>
+        </pre
+          >
         </div>
 
-        <pre>
+        <div class="project-card">
+          <h2>AI Summary Microservice</h2>
+          <p>
+            A standalone microservice that summarizes text using either a mock
+            response or OpenAI’s GPT-4o-Mini, designed for reusability,
+            scalability, and clean microservice architecture.
+          </p>
+          <a
+            href="https://github.com/ai-backend-course/ai-summary-service"
+            target="_blank"
+            >View Repo</a
+          >
+          <a
+            class="demo-btn"
+            href="https://ai-summary-service.fly.dev/health"
+            target="_blank"
+            >Test Summary Service</a
+          >
+          <div class="inline-test">
+            <h3>Try the Summary Service</h3>
+            <textarea
+              id="summary-inline-input"
+              rows="3"
+              placeholder="Paste text to summarize..."
+            ></textarea>
+            <button id="summary-inline-run">Summarize</button>
+            <pre id="summary-inline-output">Summary will appear here.</pre>
+          </div>
+
+          <pre>
         POST /summarize
         {
         "text": "long text..."
@@ -126,98 +187,102 @@
         {
         "summary": "short summary..."
         }
-        </pre>
-
-
-    </div>
-
-    </section>
-
+        </pre
+          >
+        </div>
+      </section>
     </main>
     <footer>
-        <p>© 2025 Jeff Ellis – AI Backend Developer</p>
+      <p>© 2025 Jeff Ellis – AI Backend Developer</p>
     </footer>
-<script>
-async function postJson(url, body) {
-    const res = await fetch(url, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(body)
-    });
-    if (!res.ok) {
-        const text = await res.text();
-        throw new Error(`Error ${res.status}: ${text}`);
-    }
-    return res.json();
-}
-
-// RAG inline tester
-const ragInput = document.getElementById('rag-inline-input');
-const ragRun = document.getElementById('rag-inline-run');
-const ragOut = document.getElementById('rag-inline-output');
-
-if (ragRun) {
-    ragRun.addEventListener('click', async () => {
-        const q = ragInput.value.trim();
-        if (!q) {
-            ragOut.textContent = "Please enter a query.";
-            return;
+    <script>
+      async function postJson(url, body) {
+        const res = await fetch(url, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(body),
+        });
+        if (!res.ok) {
+          const text = await res.text();
+          throw new Error(`Error ${res.status}: ${text}`);
         }
-        ragOut.textContent = "Sending RAG request...";
-        try {
-            const data = await postJson("https://notes-memory-core-rag.fly.dev/query", { query: q });
+        return res.json();
+      }
+
+      // RAG inline tester
+      const ragInput = document.getElementById('rag-inline-input');
+      const ragRun = document.getElementById('rag-inline-run');
+      const ragOut = document.getElementById('rag-inline-output');
+
+      if (ragRun) {
+        ragRun.addEventListener('click', async () => {
+          const q = ragInput.value.trim();
+          if (!q) {
+            ragOut.textContent = 'Please enter a query.';
+            return;
+          }
+          ragOut.textContent = 'Sending RAG request...';
+          try {
+            const data = await postJson(
+              'https://notes-memory-core-rag.fly.dev/query',
+              { query: q }
+            );
             ragOut.textContent = JSON.stringify(data, null, 2);
-        } catch (err) {
+          } catch (err) {
             ragOut.textContent = err.message;
-        }
-    });
-}
+          }
+        });
+      }
 
-// Summary inline tester
-const sumInput = document.getElementById('summary-inline-input');
-const sumRun = document.getElementById('summary-inline-run');
-const sumOut = document.getElementById('summary-inline-output');
+      // Summary inline tester
+      const sumInput = document.getElementById('summary-inline-input');
+      const sumRun = document.getElementById('summary-inline-run');
+      const sumOut = document.getElementById('summary-inline-output');
 
-if (sumRun) {
-    sumRun.addEventListener('click', async () => {
-        const text = sumInput.value.trim();
-        if (!text) {
-            sumOut.textContent = "Please enter some text to summarize.";
+      if (sumRun) {
+        sumRun.addEventListener('click', async () => {
+          const text = sumInput.value.trim();
+          if (!text) {
+            sumOut.textContent = 'Please enter some text to summarize.';
             return;
-        }
-        sumOut.textContent = "Sending summary request...";
-        try {
-            const data = await postJson("https://ai-summary-service.fly.dev/summary", { text });
+          }
+          sumOut.textContent = 'Sending summary request...';
+          try {
+            const data = await postJson(
+              'https://ai-summary-service.fly.dev/summary',
+              { text }
+            );
             sumOut.textContent = JSON.stringify(data, null, 2);
-        } catch (err) {
+          } catch (err) {
             sumOut.textContent = err.message;
-        }
-    });
-}
+          }
+        });
+      }
 
-// Embedding inline tester
-const embedInput = document.getElementById('embed-inline-input');
-const embedRun = document.getElementById('embed-inline-run');
-const embedOut = document.getElementById('embed-inline-output');
+      // Embedding inline tester
+      const embedInput = document.getElementById('embed-inline-input');
+      const embedRun = document.getElementById('embed-inline-run');
+      const embedOut = document.getElementById('embed-inline-output');
 
-if (embedRun) {
-    embedRun.addEventListener('click', async () => {
-        const text = embedInput.value.trim();
-        if (!text) {
-            embedOut.textContent = "Please enter some text to embed.";
+      if (embedRun) {
+        embedRun.addEventListener('click', async () => {
+          const text = embedInput.value.trim();
+          if (!text) {
+            embedOut.textContent = 'Please enter some text to embed.';
             return;
-        }
-        embedOut.textContent = "Sending embedding request...";
-        try {
-            const data = await postJson("https://ai-embedding-microservice.fly.dev/embed", { text });
+          }
+          embedOut.textContent = 'Sending embedding request...';
+          try {
+            const data = await postJson(
+              'https://ai-embedding-microservice.fly.dev/embed',
+              { text }
+            );
             embedOut.textContent = JSON.stringify(data, null, 2);
-        } catch (err) {
+          } catch (err) {
             embedOut.textContent = err.message;
-        }
-    });
-}
-</script>
-
-
-</body>
+          }
+        });
+      }
+    </script>
+  </body>
 </html>
