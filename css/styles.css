@@ -357,3 +357,23 @@ pre {
 }
 
 
+.example-label {
+    font-weight: bold;
+    margin-bottom: 6px;
+    display: block;
+}
+
+#rag-examples {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+}
+
+.hint {
+    font-size: 13px;
+    color: #555;
+    margin-top: 8px;
+}

@@ -29,8 +29,25 @@
             <div class="playground-card">
                 <h2>RAG Query (/query)</h2>
                 <p>Ask a question based on the seeded notes (Go, Docker, productivity, etc.).</p>
-                <textarea id="rag-input" rows="4" placeholder="Example: Explain vector embeddings"></textarea>
-                <button id="rag-run">Run RAG Query</button>
+                <label for="rag-examples" class="example-label">Suggested Queries:</label>
+            <select id="rag-examples">
+                <option value="">— choose an example —</option>
+                <option value="Explain Go concurrency">Explain Go concurrency</option>
+                <option value="What is a Docker image layer?">What is a Docker image layer?</option>
+                <option value="How do vector embeddings work?">How do vector embeddings work?</option>
+                <option value="Give tips for staying focused while studying">Give tips for staying focused while studying</option>
+                <option value="Give a morning productivity routine">Give a morning productivity routine</option>
+                <option value="Summarize Psalm 23">Summarize Psalm 23</option>
+                <option value="What makes a good backend API?">What makes a good backend API?</option>
+                <option value="Beginner strength training tips">Beginner strength training tips</option>
+                <option value="How do I cook juicy chicken thighs?">How do I cook juicy chicken thighs?</option>
+            </select>
+
+<textarea id="rag-input" rows="4" placeholder="Example: Explain vector embeddings"></textarea>
+<button id="rag-run">Run RAG Query</button>
+
+<p class="hint">These sample queries work best because they match the notes in the demo database.</p>
+
                 <h3>Response</h3>
                 <pre id="rag-output">Response will appear here.</pre>
             </div>
@@ -72,6 +89,15 @@ async function postJson(url, body) {
 const ragInput = document.getElementById("rag-input");
 const ragRun = document.getElementById("rag-run");
 const ragOut = document.getElementById("rag-output");
+
+const ragExamples = document.getElementById("rag-examples");
+
+ragExamples.addEventListener("change", () => {
+    if (ragExamples.value !== "") {
+        ragInput.value = ragExamples.value;
+    }
+});
+
 
 ragRun.addEventListener("click", async () => {
     const q = ragInput.value.trim();
