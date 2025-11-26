@@ -431,10 +431,12 @@ pre {
 }
 
 .profile-photo {
-    width: 260px;         /* Clean professional portrait size */
+    width: 260px;
     height: auto;
-    border-radius: 8px;   /* Square corners with slight softening */
+    border-radius: 10px;          
     display: block;
-    margin: 20px auto 30px auto;  /* Centers and adds spacing */
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+    margin: 20px auto 30px auto;
+    box-shadow: none;
+    border: none;                 
 }
+
