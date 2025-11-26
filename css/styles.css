@@ -1,8 +1,4 @@
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: #f9f9f9;
-}
+
 main {
     padding-bottom: 60px;
 }
@@ -12,56 +8,6 @@ main {
 }
 
 
-/* Make navbar fully responsive */
-nav {
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;         /* Allows items to flow to a new line */
-    justify-content: center; /* Centers everything */
-    align-items: center;
-    padding: 0.5rem;
-    gap: 0.75rem;            /* Space between items */
-    box-sizing: border-box;
-}
-
-/* Each nav item behaves nicely on small screens */
-nav a, nav button, nav .dropdown {
-    padding: 0.5rem 0.75rem;
-    font-size: 0.95rem;
-    white-space: nowrap;     /* Prevents ugly word breaks */
-    flex-shrink: 0;          /* Prevents shrinking off screen */
-}
-
-/* Force dropdown to behave on mobile */
-.dropdown {
-    position: relative;
-}
-
-.dropdown-content {
-    position: absolute;
-    left: 0;
-    min-width: 160px;
-    box-sizing: border-box;
-}
-
-
-nav .nav-links a:hover {
-    color: #ddd;
-    text-decoration: none;
-}
-
-
-nav .nav-links {
-    list-style: none;
-    display: flex;
-    gap: 20px;
-}
-
-nav .nav-links a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-}
 
 .hero {
     text-align: center;
@@ -93,40 +39,105 @@ body {
 
 /* Navigation */
 /* Fix navbar overflow on mobile */
+/* === CLEAN & RESPONSIVE NAVBAR === */
+
 nav {
+    width: 100%;
+    background: #111;
+    color: white;
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: wrap;      /* Allows wrapping on small screens */
     justify-content: center;
-    gap: 0.75rem;
-    padding: 0.75rem;
+    align-items: center;
+    padding: 10px 12px;
+    gap: 14px;
+    box-sizing: border-box;
 }
 
-nav a {
-    padding: 0.5rem 0.75rem;
-    white-space: nowrap;
-}
-
-
-nav .logo {
-    font-size: 24px;
-    font-weight: bold;
-}
-
-nav .nav-links {
-    list-style: none;
-    display: flex;
-    gap: 24px;
-}
-
-nav .nav-links a {
+nav a,
+nav button,
+nav .dropdown {
     color: white;
     text-decoration: none;
     font-weight: bold;
+    padding: 8px 12px;
+    border-radius: 4px;
+    white-space: nowrap;
+    flex-shrink: 0;       /* Prevent text cutoff */
     font-size: 15px;
 }
 
-nav .nav-links a:hover {
-    text-decoration: underline;
+nav a:hover,
+nav button:hover {
+    background: #333;
+}
+
+/* Fix UL inside nav */
+nav ul {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+    flex-wrap: wrap;        /* allows wrapping on mobile */
+    justify-content: center;
+    gap: 12px;
+}
+
+nav li {
+    margin: 0;
+    padding: 0;
+}
+
+
+/* Dropdown */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: calc(100% + 4px);
+    left: 0;
+    background: #222;
+    min-width: 160px;
+    border-radius: 6px;
+    padding: 6px 0;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.25);
+}
+
+.dropdown-content a {
+    display: block;
+    padding: 8px 14px;
+    white-space: nowrap;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* === MOBILE FIX === */
+@media (max-width: 600px) {
+    nav {
+        padding: 12px 8px;
+        gap: 10px;
+    }
+
+    nav a,
+    nav button {
+        font-size: 14px;
+        padding: 8px 10px;
+    }
+
+    .dropdown-content {
+        position: static;
+        box-shadow: none;
+        width: 100%;
+    }
+
+    .dropdown-content a {
+        width: 100%;
+    }
 }
 
 /* Hero Section */
@@ -398,17 +409,3 @@ pre {
     margin-top: 8px;
 }
 
-@media (max-width: 600px) {
-    nav .nav-links {
-        gap: 12px;
-    }
-
-    nav {
-        padding: 14px 16px;
-    }
-
-    nav .nav-links a {
-        font-size: 14px;
-    }
-
-}
