@@ -22,22 +22,29 @@
 <main>
     <section class="about">
         <h1>API Playground</h1>
-        <p>Test my live AI backend services directly from your browser. All calls go to the real deployed APIs.</p>
+        <p>Test my live AI backend services. These requests hit the real deployed RAG and Summary APIs.</p>
 
-        <label for="playground-endpoint"><strong>Select endpoint:</strong></label>
-        <select id="playground-endpoint">
-            <option value="rag">RAG Query (/query)</option>
-            <option value="summary">Summarize Text (/summarize)</option>
-            <option value="embed">Embedding (/embed)</option>
-        </select>
+        <div class="playground-grid">
+            <!-- RAG TESTER -->
+            <div class="playground-card">
+                <h2>RAG Query (/query)</h2>
+                <p>Ask a question based on the seeded notes (Go, Docker, productivity, etc.).</p>
+                <textarea id="rag-input" rows="4" placeholder="Example: Explain vector embeddings"></textarea>
+                <button id="rag-run">Run RAG Query</button>
+                <h3>Response</h3>
+                <pre id="rag-output">Response will appear here.</pre>
+            </div>
 
-        <label for="playground-input"><strong>Input text:</strong></label>
-        <textarea id="playground-input" rows="6" placeholder="Type your question or text here..."></textarea>
-
-        <button id="playground-run">Run Request</button>
-
-        <h3>Response</h3>
-        <pre id="playground-output">Waiting for request…</pre>
+            <!-- SUMMARY TESTER -->
+            <div class="playground-card">
+                <h2>Summary Service (/summarize)</h2>
+                <p>Paste any text and get a concise summary using the Summary microservice.</p>
+                <textarea id="summary-input" rows="4" placeholder="Paste text here to summarize..."></textarea>
+                <button id="summary-run">Summarize Text</button>
+                <h3>Response</h3>
+                <pre id="summary-output">Summary will appear here.</pre>
+            </div>
+        </div>
     </section>
 </main>
 
@@ -46,54 +53,60 @@
 </footer>
 
 <script>
-const endpointSelect = document.getElementById('playground-endpoint');
-const inputEl = document.getElementById('playground-input');
-const outputEl = document.getElementById('playground-output');
-const runBtn = document.getElementById('playground-run');
+async function postJson(url, body) {
+    const res = await fetch(url, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(body),
+    });
 
-const ENDPOINTS = {
-    rag: "https://notes-memory-core-rag.fly.dev/query",
-    summary: "https://ai-summary-service.fly.dev/summary",
-    embed: "https://ai-embedding-microservice.fly.dev/embed"
-};
+    if (!res.ok) {
+        const text = await res.text();
+        throw new Error(`Error ${res.status}: ${text}`);
+    }
 
-runBtn.addEventListener('click', async () => {
-    const mode = endpointSelect.value;
-    const text = inputEl.value.trim();
+    return res.json();
+}
 
-    if (!text) {
-        outputEl.textContent = "Please enter some text first.";
+// RAG tester
+const ragInput = document.getElementById("rag-input");
+const ragRun = document.getElementById("rag-run");
+const ragOut = document.getElementById("rag-output");
+
+ragRun.addEventListener("click", async () => {
+    const q = ragInput.value.trim();
+    if (!q) {
+        ragOut.textContent = "Please enter a query.";
         return;
     }
 
-    let url = ENDPOINTS[mode];
-    let body;
+    ragOut.textContent = "Sending RAG request...";
+    try {
+        const data = await postJson("https://notes-memory-core-rag.fly.dev/query", { query: q });
+        ragOut.textContent = JSON.stringify(data, null, 2);
+    } catch (err) {
+        ragOut.textContent = err.message;
+    }
+});
 
-    if (mode === "rag") {
-        body = { query: text };
-    } else {
-        body = { text: text };
+// Summary tester
+const sumInput = document.getElementById("summary-input");
+const sumRun = document.getElementById("summary-run");
+const sumOut = document.getElementById("summary-output");
+
+sumRun.addEventListener("click", async () => {
+    const text = sumInput.value.trim();
+    if (!text) {
+        sumOut.textContent = "Please paste some text to summarize.";
+        return;
     }
 
-    outputEl.textContent = "Sending request...";
-
+    sumOut.textContent = "Sending summary request...";
     try {
-        const res = await fetch(url, {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(body)
-        });
-
-        if (!res.ok) {
-            const errText = await res.text();
-            outputEl.textContent = `Error ${res.status}: ${errText}`;
-            return;
-        }
-
-        const data = await res.json();
-        outputEl.textContent = JSON.stringify(data, null, 2);
+        const data = await postJson("https://ai-summary-service.fly.dev/summarize", { text });
+        sumOut.textContent = JSON.stringify(data, null, 2);
     } catch (err) {
-        outputEl.textContent = "Request failed: " + err.message;
+        sumOut.textContent = err.message;
     }
 });
 </script>

@@ -197,6 +197,55 @@ nav .nav-links a:hover {
     margin-top: 0;
 }
 
+.playground-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.playground-card {
+    background: #f7f7f7;
+    padding: 18px;
+    border-radius: 10px;
+}
+
+.playground-card textarea {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 8px;
+    margin-bottom: 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-family: inherit;
+}
+
+.playground-card button {
+    padding: 8px 14px;
+    background: #0077ff;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.playground-card button:hover {
+    background: #005fcc;
+}
+
+.playground-card pre {
+    margin-top: 10px;
+    font-size: 13px;
+    background: #eee;
+    padding: 10px;
+    border-radius: 6px;
+    overflow-x: auto;
+    white-space: pre-wrap;
+}
+
+
 /* Contact Page */
 .contact {
     padding: 40px 20px;
@@ -263,6 +312,48 @@ pre {
     nav .nav-links a {
         font-size: 14px;
     }
+}
+.inline-test {
+    margin-top: 18px;
+    padding: 15px;
+    border-radius: 8px;
+    background: #f7f7f7;
+}
+
+.inline-test h3 {
+    margin-top: 0;
+    font-size: 16px;
+}
+
+.inline-test input,
+.inline-test textarea {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 8px;
+    margin-bottom: 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-family: inherit;
+}
+
+.inline-test button {
+    padding: 8px 14px;
+    background: #0077ff;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.inline-test button:hover {
+    background: #005fcc;
+}
+
+.inline-test pre {
+    margin-top: 10px;
+    font-size: 13px;
 }
 
 
