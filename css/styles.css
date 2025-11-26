@@ -198,7 +198,7 @@ nav a:hover {
      max-width: 750px;
     margin: 0 auto;
     text-align: center;
-    padding: 40px 25px 40px 25px;
+    padding: 40px 25px 20px 25px;
     background: white;
     border-radius: 12px;
     box-shadow: 0 2px 6px rgba(0,0,0,0.1);
@@ -220,6 +220,11 @@ nav a:hover {
     font-size: 2.1rem;
     margin-bottom: 20px;
 }
+
+.about p:last-of-type {
+    margin-bottom: 10px;
+}
+
 
 .playground-grid {
     display: grid;
@@ -441,7 +446,7 @@ pre {
     height: auto;
     border-radius: 10px;
     display: block;
-    margin: 10px auto 35px auto;
+     margin: 10px auto 45px auto;
     box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
     border: none;
 }
