@@ -41,51 +41,68 @@ body {
 /* Fix navbar overflow on mobile */
 /* === CLEAN & RESPONSIVE NAVBAR === */
 
+/* === RESPONSIVE NAVBAR (FINAL BUILD) === */
+
 nav {
     width: 100%;
-    background: #111;
-    color: white;
+    background: #111 !important;    /* force dark */
+    color: white !important;
     display: flex;
-    flex-wrap: wrap;      /* Allows wrapping on small screens */
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    padding: 10px 12px;
-    gap: 14px;
+    padding: 12px 16px;
+    gap: 16px;
     box-sizing: border-box;
 }
 
-nav a,
-nav button,
-nav .dropdown {
-    color: white;
+/* Remove UL formatting problems */
+nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+/* Remove LI spacing issues */
+nav li {
+    margin: 0;
+    padding: 0;
+}
+
+/* Fix nav links on all screens */
+nav a {
+    color: white !important;
     text-decoration: none;
     font-weight: bold;
     padding: 8px 12px;
     border-radius: 4px;
     white-space: nowrap;
-    flex-shrink: 0;       /* Prevent text cutoff */
-    font-size: 15px;
+    flex-shrink: 0;
+    font-size: 16px;
 }
 
-nav a:hover,
-nav button:hover {
+nav a:hover {
     background: #333;
 }
 
-/* Fix UL inside nav */
-nav ul {
-    list-style: none;
-    display: flex;
-    padding: 0;
-    margin: 0;
-    flex-wrap: wrap;        /* allows wrapping on mobile */
-    justify-content: center;
-    gap: 12px;
-}
+/* Mobile cleanup */
+@media (max-width: 600px) {
+    nav {
+        padding: 12px 10px;
+        gap: 12px;
+    }
 
-nav li {
-    margin: 0;
-    padding: 0;
+    nav a {
+        font-size: 14px;
+        padding: 8px 10px;
+    }
+
+    nav ul {
+        gap: 12px;
+    }
 }
 
 
@@ -247,6 +264,9 @@ nav li {
 }
 
 .playground-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     background: #f7f7f7;
     padding: 18px;
     border-radius: 10px;
@@ -279,12 +299,24 @@ nav li {
 
 .playground-card pre {
     margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
     font-size: 13px;
     background: #eee;
     padding: 10px;
     border-radius: 6px;
     overflow-x: auto;
     white-space: pre-wrap;
+}
+@media (max-width: 600px) {
+    .playground-card pre {
+        font-size: 12px;
+        padding: 8px;
+        max-width: 100%;
+        overflow-wrap: break-word;
+        white-space: pre-wrap;
+        word-break: break-word;
+    }
 }
 
 
