@@ -236,3 +236,33 @@ footer {
     font-size: 14px;
 }
 
+pre {
+    background: #f0f0f0;
+    padding: 12px;
+    border-radius: 8px;
+    overflow-x: auto;
+    margin: 15px 0;
+    font-size: 14px;
+    white-space: pre-wrap; 
+}
+
+.projects-list .project-card pre {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+@media (max-width: 600px) {
+    nav .nav-links {
+        gap: 12px;
+    }
+
+    nav {
+        padding: 14px 16px;
+    }
+
+    nav .nav-links a {
+        font-size: 14px;
+    }
+}
+
+
