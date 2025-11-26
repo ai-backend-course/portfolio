@@ -331,19 +331,8 @@ pre {
     margin-right: 0;
 }
 
-@media (max-width: 600px) {
-    nav .nav-links {
-        gap: 12px;
-    }
 
-    nav {
-        padding: 14px 16px;
-    }
 
-    nav .nav-links a {
-        font-size: 14px;
-    }
-}
 .inline-test {
     margin-top: 18px;
     padding: 15px;
@@ -407,4 +396,19 @@ pre {
     font-size: 13px;
     color: #555;
     margin-top: 8px;
+}
+
+@media (max-width: 600px) {
+    nav .nav-links {
+        gap: 12px;
+    }
+
+    nav {
+        padding: 14px 16px;
+    }
+
+    nav .nav-links a {
+        font-size: 14px;
+    }
+
 }
