@@ -139,41 +139,45 @@
         </div>
 
         <div class="project-card">
-          <h2>Workflow / Orchestration Service</h2>
+          <h2>Generative AI Service</h2>
+
           <p>
-            A lightweight Go service that coordinates retrieval and
-            summarization across internal AI microservices. This project
-            demonstrates how RAG pipelines and reusable AI services can be
-            composed into a controlled workflow with evaluation and tracing.
+            A production-deployed Generative AI microservice built in Go. This
+            service exposes a prompt-driven API for text generation and serves
+            as a foundational LLM capability used by other backend services.
           </p>
 
           <p class="project-note">
-            This service supports the RAG system and summary service but is not
-            required for direct API usage.
+            Designed to be reusable and provider-agnostic, this service focuses
+            purely on generation and avoids task-specific or orchestration
+            logic.
           </p>
 
           <a
-            href="https://github.com/ai-backend-course/agentic-workflow-service"
+            href="https://github.com/ai-backend-course/ai-generative-service"
             target="_blank"
-            >View Repo</a
           >
+            View Repo
+          </a>
+
           <a
             class="demo-btn"
-            href="https://agentic-workflow-service.fly.dev/health"
+            href="https://ai-generative-service.fly.dev/generate"
             target="_blank"
-            >View Live Service</a
           >
+            View Live Service
+          </a>
 
           <pre>
-POST /run
+POST /generate
 {
-  "input": "What notes do I have about Docker?"
+  "prompt": "Explain pgvector simply"
 }
 
 RESPONSE:
 {
-  "final_answer": "...",
-  "evaluation_score": 0.6
+  "output": "...",
+  "tokens_used": 279
 }
   </pre
           >
@@ -263,6 +267,47 @@ Embedding vector will appear here.</pre
         "summary": "short summary..."
         }
         </pre
+          >
+        </div>
+
+        <div class="project-card">
+          <h2>Workflow / Orchestration Service</h2>
+          <p>
+            A lightweight Go service that coordinates retrieval and
+            summarization across internal AI microservices. This project
+            demonstrates how RAG pipelines and reusable AI services can be
+            composed into a controlled workflow with evaluation and tracing.
+          </p>
+
+          <p class="project-note">
+            This service supports the RAG system and summary service but is not
+            required for direct API usage.
+          </p>
+
+          <a
+            href="https://github.com/ai-backend-course/agentic-workflow-service"
+            target="_blank"
+            >View Repo</a
+          >
+          <a
+            class="demo-btn"
+            href="https://agentic-workflow-service.fly.dev/health"
+            target="_blank"
+            >View Live Service</a
+          >
+
+          <pre>
+POST /run
+{
+  "input": "What notes do I have about Docker?"
+}
+
+RESPONSE:
+{
+  "final_answer": "...",
+  "evaluation_score": 0.6
+}
+  </pre
           >
         </div>
       </section>
