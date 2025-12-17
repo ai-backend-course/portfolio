@@ -50,6 +50,10 @@
     <main>
       <section class="projects-list">
         <h1>My AI Backend Projects</h1>
+        <p class="subtitle">
+          RAG-first backend systems with reusable AI microservices and workflow
+          coordination
+        </p>
 
         <div class="project-card">
           <h2>Notes Memory Core API</h2>
@@ -131,6 +135,47 @@
         "results": [...]
         }
         </pre
+          >
+        </div>
+
+        <div class="project-card">
+          <h2>Workflow / Orchestration Service</h2>
+          <p>
+            A lightweight Go service that coordinates retrieval and
+            summarization across internal AI microservices. This project
+            demonstrates how RAG pipelines and reusable AI services can be
+            composed into a controlled workflow with evaluation and tracing.
+          </p>
+
+          <p class="project-note">
+            This service supports the RAG system and summary service but is not
+            required for direct API usage.
+          </p>
+
+          <a
+            href="https://github.com/ai-backend-course/agentic-workflow-service"
+            target="_blank"
+            >View Repo</a
+          >
+          <a
+            class="demo-btn"
+            href="https://agentic-workflow-service.fly.dev/health"
+            target="_blank"
+            >View Live Service</a
+          >
+
+          <pre>
+POST /run
+{
+  "input": "What notes do I have about Docker?"
+}
+
+RESPONSE:
+{
+  "final_answer": "...",
+  "evaluation_score": 0.6
+}
+  </pre
           >
         </div>
 
