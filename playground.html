@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -44,15 +44,14 @@
       <a href="projects.html">Projects</a>
       <a href="about.html">About</a>
       <a href="contact.html">Contact</a>
-      <a href="playground.html">Playground</a>
     </nav>
 
     <main>
       <section class="about">
         <h1>API Playground</h1>
         <p>
-          Test my live AI backend services. These requests hit real deployed RAG
-          and AI microservices used in my backend architecture.
+          Test my AI backend service. These requests hit real deployed RAG and
+          AI microservices used in my backend architecture.
         </p>
 
         <div class="playground-grid">
@@ -132,7 +131,7 @@
     </main>
 
     <footer>
-      <p>© 2025 Jeff Ellis – Backend Software Engineer</p>
+      <p>© 2026 Jeff Ellis – Full-Stack Software Engineer</p>
     </footer>
 
     <script>
@@ -175,7 +174,7 @@
         try {
           const data = await postJson(
             'https://notes-memory-core-rag.fly.dev/query',
-            { query: q }
+            { query: q },
           );
           ragOut.textContent = JSON.stringify(data, null, 2);
         } catch (err) {
@@ -199,7 +198,7 @@
         try {
           const data = await postJson(
             'https://ai-summary-service.fly.dev/summary',
-            { text }
+            { text },
           );
           sumOut.textContent = JSON.stringify(data, null, 2);
         } catch (err) {

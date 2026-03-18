@@ -1,34 +1,9 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Projects | Jeff Ellis</title>
-    <!-- Primary Meta Tags -->
-    <meta name="title" content="Jeff Ellis — AI Backend Developer" />
-    <meta
-      name="description"
-      content="AI Backend Developer specializing in Go, Postgres, pgvector, Docker, and OpenAI. Builder of RAG systems, scalable microservices, and AI-ready backend architectures."
-    />
-
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="Jeff Ellis — AI Backend Developer" />
-    <meta
-      property="og:description"
-      content="AI Backend Developer specializing in Go, Postgres, pgvector, Docker, and OpenAI. Builder of RAG systems, scalable microservices, and AI-ready backend architectures."
-    />
-    <meta property="og:image" content="YOUR_LINK_TO_PREVIEW_IMAGE" />
-    <meta property="og:url" content="https://YOUR-PORTFOLIO-URL" />
-
-    <!-- Twitter -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Jeff Ellis — AI Backend Developer" />
-    <meta
-      name="twitter:description"
-      content="AI Backend Developer specializing in Go, Postgres, pgvector, Docker, and OpenAI. Builder of RAG systems, scalable microservices, and AI-ready backend architectures."
-    />
-    <meta name="twitter:image" content="YOUR_LINK_TO_PREVIEW_IMAGE" />
 
     <link rel="icon" type="image/x-icon" href="favicon.ico" />
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
@@ -44,51 +19,28 @@
       <a href="projects.html">Projects</a>
       <a href="about.html">About</a>
       <a href="contact.html">Contact</a>
-      <a href="playground.html">Playground</a>
     </nav>
 
     <main>
       <section class="projects-list">
-        <h1>My AI Backend Projects</h1>
+        <h1>Projects</h1>
         <p class="subtitle">
-          RAG-first backend systems with reusable AI microservices and workflow
-          coordination
+          Full-stack and backend projects focused on secure application design,
+          APIs, testing, and scalable architecture.
         </p>
 
         <div class="project-card">
-          <h2>Notes Memory Core API</h2>
+          <h2>Claim Management Platform</h2>
           <p>
-            A production-grade Go API with CRUD note management, structured
-            logging (zerolog), metrics middleware, and Postgres integration.
+            A full-stack application built with ASP.NET Core, React, TypeScript,
+            and SQL Server. It includes JWT authentication, role-based
+            authorization, protected routes, claim CRUD workflows, and automated
+            testing across backend and frontend layers.
           </p>
           <a
-            href="https://github.com/ai-backend-course/notes-memory-core"
+            href="https://github.com/jellis777/ClaimManagementPlatform"
             target="_blank"
             >View Repo</a
-          >
-          <a
-            class="demo-btn"
-            href="https://notes-memory-core-api.fly.dev/health"
-            target="_blank"
-            >Test Live API</a
-          >
-          <pre>
-            POST /notes
-            {
-            "title": "Test",
-            "content": "Hello world"
-            }
-
-            GET /notes
-            [
-            {
-                "id": 1,
-                "title": "Test",
-                "content": "Hello world",
-                "created_at": "..."
-            }
-            ]
-    </pre
           >
         </div>
 
@@ -105,126 +57,8 @@
             target="_blank"
             >View Repo</a
           >
-          <a
-            class="demo-btn"
-            href="https://notes-memory-core-rag.fly.dev/health"
-            target="_blank"
-            >Test Live RAG API</a
-          >
-          <div class="inline-test">
-            <h3>Try the RAG Query</h3>
-            <input
-              id="rag-inline-input"
-              type="text"
-              placeholder="Ask a question based on your notes..."
-            />
-            <button id="rag-inline-run">Run RAG Query</button>
-            <pre id="rag-inline-output">Response will appear here.</pre>
-          </div>
 
-          <pre>
-        POST /query
-        {
-        "query": "What does my note say?"
-        }
-
-        RESPONSE:
-        {
-        "query": "What does my note say?",
-        "response": "... grounded AI answer ...",
-        "results": [...]
-        }
-        </pre
-          >
-        </div>
-
-        <div class="project-card">
-          <h2>Generative AI Service</h2>
-
-          <p>
-            A production-deployed Generative AI microservice built in Go. This
-            service exposes a prompt-driven API for text generation and serves
-            as a foundational LLM capability used by other backend services.
-          </p>
-
-          <p class="project-note">
-            Designed to be reusable and provider-agnostic, this service focuses
-            purely on generation and avoids task-specific or orchestration
-            logic.
-          </p>
-
-          <a
-            href="https://github.com/ai-backend-course/ai-generative-service"
-            target="_blank"
-          >
-            View Repo
-          </a>
-
-          <a
-            class="demo-btn"
-            href="https://ai-generative-service.fly.dev/generate"
-            target="_blank"
-          >
-            View Live Service
-          </a>
-
-          <pre>
-POST /generate
-{
-  "prompt": "Explain pgvector simply"
-}
-
-RESPONSE:
-{
-  "output": "...",
-  "tokens_used": 279
-}
-  </pre
-          >
-        </div>
-
-        <div class="project-card">
-          <h2>AI Embedding Microservice</h2>
-          <p>
-            An independent, scalable microservice that converts text into
-            embedding vectors using either deterministic mock mode or OpenAI
-            embeddings, with full validation, logging, and metrics.
-          </p>
-          <a
-            href="https://github.com/ai-backend-course/ai-embedding-microservice"
-            target="_blank"
-            >View Repo</a
-          >
-          <a
-            class="demo-btn"
-            href="https://ai-embedding-microservice.fly.dev/health"
-            target="_blank"
-            >Test Embedding Service</a
-          >
-          <div class="inline-test">
-            <h3>Try the Embedding Service</h3>
-            <input
-              id="embed-inline-input"
-              type="text"
-              placeholder="Enter text to embed..."
-            />
-            <button id="embed-inline-run">Generate Embedding</button>
-            <pre id="embed-inline-output">
-Embedding vector will appear here.</pre
-            >
-          </div>
-          <pre>
-        POST /embed
-        {
-        "text": "hello"
-        }
-
-        RESPONSE:
-        {
-        "embedding": [0.123, -0.482, ...]
-        }
-        </pre
-          >
+          <p><a href="playground.html">Explore live API playground demos</a></p>
         </div>
 
         <div class="project-card">
@@ -239,199 +73,11 @@ Embedding vector will appear here.</pre
             target="_blank"
             >View Repo</a
           >
-          <a
-            class="demo-btn"
-            href="https://ai-summary-service.fly.dev/health"
-            target="_blank"
-            >Test Summary Service</a
-          >
-          <div class="inline-test">
-            <h3>Try the Summary Service</h3>
-            <textarea
-              id="summary-inline-input"
-              rows="3"
-              placeholder="Paste text to summarize..."
-            ></textarea>
-            <button id="summary-inline-run">Summarize</button>
-            <pre id="summary-inline-output">Summary will appear here.</pre>
-          </div>
-
-          <pre>
-        POST /summarize
-        {
-        "text": "long text..."
-        }
-
-        RESPONSE:
-        {
-        "summary": "short summary..."
-        }
-        </pre
-          >
-        </div>
-
-        <div class="project-card">
-          <h2>Workflow / Orchestration Service</h2>
-          <p>
-            A lightweight Go service that coordinates retrieval and
-            summarization across internal AI microservices. This project
-            demonstrates how RAG pipelines and reusable AI services can be
-            composed into a controlled workflow with evaluation and tracing.
-          </p>
-
-          <p class="project-note">
-            This service supports the RAG system and summary service but is not
-            required for direct API usage.
-          </p>
-
-          <a
-            href="https://github.com/ai-backend-course/agentic-workflow-service"
-            target="_blank"
-            >View Repo</a
-          >
-          <a
-            class="demo-btn"
-            href="https://agentic-workflow-service.fly.dev/health"
-            target="_blank"
-            >View Live Service</a
-          >
-
-          <pre>
-POST /run
-{
-  "input": "What notes do I have about Docker?"
-}
-
-RESPONSE:
-{
-  "final_answer": "...",
-  "evaluation_score": 0.6
-}
-  </pre
-          >
-        </div>
-
-        <hr />
-
-        <h1 style="margin-top: 4rem">Core Backend & Cloud Projects</h1>
-        <p class="subtitle">
-          Foundational Go and AWS projects demonstrating cloud-native backend
-          design and reliability
-        </p>
-
-        <div class="project-card">
-          <h2>Go + AWS Serverless Backend</h2>
-
-          <p>
-            A small Go backend running on AWS Lambda that persists data to
-            DynamoDB and publishes asynchronous messages to SQS.
-          </p>
-
-          <p class="project-note">
-            Designed to be stateless, failure-aware, and safe to restart, with
-            clean separation between handlers, services, and AWS infrastructure.
-          </p>
-
-          <a
-            href="https://github.com/ai-backend-course/go-aws-backend-fundamentals"
-            target="_blank"
-          >
-            View Repo
-          </a>
         </div>
       </section>
     </main>
     <footer>
-      <p>© 2025 Jeff Ellis – Backend Software Engineer</p>
+      <p>© 2026 Jeff Ellis – Full-Stack Software Engineer</p>
     </footer>
-    <script>
-      async function postJson(url, body) {
-        const res = await fetch(url, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(body),
-        });
-        if (!res.ok) {
-          const text = await res.text();
-          throw new Error(`Error ${res.status}: ${text}`);
-        }
-        return res.json();
-      }
-
-      // RAG inline tester
-      const ragInput = document.getElementById('rag-inline-input');
-      const ragRun = document.getElementById('rag-inline-run');
-      const ragOut = document.getElementById('rag-inline-output');
-
-      if (ragRun) {
-        ragRun.addEventListener('click', async () => {
-          const q = ragInput.value.trim();
-          if (!q) {
-            ragOut.textContent = 'Please enter a query.';
-            return;
-          }
-          ragOut.textContent = 'Sending RAG request...';
-          try {
-            const data = await postJson(
-              'https://notes-memory-core-rag.fly.dev/query',
-              { query: q }
-            );
-            ragOut.textContent = JSON.stringify(data, null, 2);
-          } catch (err) {
-            ragOut.textContent = err.message;
-          }
-        });
-      }
-
-      // Summary inline tester
-      const sumInput = document.getElementById('summary-inline-input');
-      const sumRun = document.getElementById('summary-inline-run');
-      const sumOut = document.getElementById('summary-inline-output');
-
-      if (sumRun) {
-        sumRun.addEventListener('click', async () => {
-          const text = sumInput.value.trim();
-          if (!text) {
-            sumOut.textContent = 'Please enter some text to summarize.';
-            return;
-          }
-          sumOut.textContent = 'Sending summary request...';
-          try {
-            const data = await postJson(
-              'https://ai-summary-service.fly.dev/summary',
-              { text }
-            );
-            sumOut.textContent = JSON.stringify(data, null, 2);
-          } catch (err) {
-            sumOut.textContent = err.message;
-          }
-        });
-      }
-
-      // Embedding inline tester
-      const embedInput = document.getElementById('embed-inline-input');
-      const embedRun = document.getElementById('embed-inline-run');
-      const embedOut = document.getElementById('embed-inline-output');
-
-      if (embedRun) {
-        embedRun.addEventListener('click', async () => {
-          const text = embedInput.value.trim();
-          if (!text) {
-            embedOut.textContent = 'Please enter some text to embed.';
-            return;
-          }
-          embedOut.textContent = 'Sending embedding request...';
-          try {
-            const data = await postJson(
-              'https://ai-embedding-microservice.fly.dev/embed',
-              { text }
-            );
-            embedOut.textContent = JSON.stringify(data, null, 2);
-          } catch (err) {
-            embedOut.textContent = err.message;
-          }
-        });
-      }
-    </script>
   </body>
 </html>
